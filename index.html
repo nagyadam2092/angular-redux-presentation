@@ -7,10 +7,23 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/league.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- blink -->
+		<style>
+		.blink {
+			animation: blink 0.5s step-end infinite;
+		}
+
+		@keyframes blink {
+			67% {
+				opacity: 0
+			}
+		}
+		</style>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -24,36 +37,67 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<section data-background="https://media.giphy.com/media/Z1kpfgtHmpWHS/giphy.gif"></section>
+				<!-- <section data-background="https://media.giphy.com/media/11fucLQCTOdvBS/giphy.gif"></section> -->
 				<section>
 					<h2>Angular + Redux Debugging</h2>
 				</section>
-				<section>
+				<!-- <section>
 					<h3>Redux</h3>
+				</section> -->
+				<!-- <section data-background="https://media.giphy.com/media/qUDEUuKpPLSBq/giphy.gif"> -->
+				<!-- <section data-background="https://media.giphy.com/media/wHXaBTGxHz7ig/giphy.gif"> -->
 				</section>
 				<section>
-					<h4>Redux</h4>
+					<h2>Redux</h2>
 					<ul>
-						<li>Sounds like a cool new technology</li>
-						<li>It's more of a convention</li>
-						<li>Fun facts</li>
-						<ul>
-							<li>Redux = (Red)ucer + Fl(ux)</li>
-							<li>Reducer reduces (state, action) into state - like array.prototype.reduce()﻿</li>
-						</ul>
-						<li><a href="https://www.youtube.com/watch?v=xsSnOQynTHs">Dan Abramov presents time traveling 💥💥💥</a></li>
+						<li class="fragment">Sounds like a cool new technology</li>
+						<li class="fragment">It's more of a convention</li>
 					</ul>
 				</section>
 				<section>
-					<h5>What problem tries to solve Redux?</h5>
+					<h1 class="blink">TRIVIA TIME !!!</h1>
+				</section>
+				<section>
+					<section>
+						<h2>Where does the name "Redux" come from?</h2>
+						<audio data-autoplay src="30seconds.mp3" loop></audio>
+					</section>
+					<section>
+						<audio data-autoplay src="30seconds.mp3" loop></audio>
+						<blockquote cite="https://en.wikipedia.org/wiki/Redux_(JavaScript_library)">&ldquo;I was thinking about Flux as a reduce operation over time... your stores, they accumulate state in response to these actions. I was thinking of taking this further. What if your Flux store was not a store but a reducer function?&rdquo;<br />- Dan Abramov</blockquote>
+					</section>
+				</section>
+				<section>
+					<h2>Answer</h2>
 					<ul>
-						<li>UI usually has more state than the backend</li>
-						<li>buttons, forms, inputs on a SPA</li>
-						<li>component interactions (child to parent prop, parent to child func)</li>
+						<li class="fragment">Redux = (Red)ucer + Fl(ux)</li>
+						<li class="fragment">Reducer reduces (state, action) into state - like Array.prototype.reduce()﻿</li>
+						<li class="fragment">Flux: architectural pattern</li>
+						<li class="fragment"><a href="https://www.youtube.com/watch?v=xsSnOQynTHs">Dan Abramov presents time traveling 💥💥💥</a></li>
+					</ul>
+				</section>
+				<section data-background="https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png"></section>
+				<section>
+					<blockquote cite="https://en.wikipedia.org/wiki/Redux_(JavaScript_library)">&ldquo;I was thinking about Flux as a reduce operation over time... your stores, they accumulate state in response to these actions. I was thinking of taking this further. What if your Flux store was not a store but a reducer function?&rdquo;<br />- Dan Abramov</blockquote>
+				</section>
+				<section>
+					<h2>What problem tries to solve redux?</h2>
+				</section>
+				<section data-background="https://media.giphy.com/media/o2w8iRwy8SrqU/giphy.gif"></section>
+				<section>
+					<h2>What problem tries to solve Redux?</h2>
+					<ul>
+						<li class="fragment">(arguably) UI usually has more state than the backend</li>
+						<li class="fragment">buttons, forms, inputs on a SPA</li>
+						<li class="fragment">component interactions (child to parent prop, parent to child func)</li>
+						<li class="fragment">unidirectional data flow</li>
 					</ul>
 				</section>
 				<section>
 					<img src="https://www.neovasolutions.com/wp-content/uploads/2018/07/image-2.png" alt="">
 				</section>
+				<!-- <section data-background="https://media.giphy.com/media/z9sFrQMfEME5a/giphy.gif"></section> -->
 				<section>
 					<a href="https://gist.github.com/conorhastings/ba8a06ce061466ac3fe7" target="_blank">https://gist.github.com/conorhastings/ba8a06ce061466ac3fe7</a>
 					<script src="https://gist.github.com/conorhastings/ba8a06ce061466ac3fe7.js"></script>
@@ -64,10 +108,11 @@
 				<section>
 					<h2>Redux Devtools</h2>
 					<ul>
-						<li><a href="http://extension.remotedev.io/#demo">http://extension.remotedev.io/#demo</a></li>
-						<li>time traveling</li>
-						<li>persist state on page reload</li>
-						<li>skip (cancel) actions</li>
+						<li class="fragment"><a href="http://extension.remotedev.io/">http://extension.remotedev.io/</a></li>
+						<li class="fragment">time traveling</li>
+						<li class="fragment">persist state on page reload</li>
+						<li class="fragment">skip (cancel) actions</li>
+						<li class="fragment">dispatch custom actions</li>
 					</ul>
 				</section>
 				<section>
@@ -75,18 +120,49 @@
 					<a href="http://extension.remotedev.io/#demo">http://extension.remotedev.io/#demo</a>
 				</section>
 				<section>
-					<h2>ngrx</h2>
+					<h2>NgRx</h2>
 					<p>RxJS powered state management for Angular applications, inspired by Redux</p>
+				</section>
+				<section>
+					<h2>NgRx Effects</h2>
+					<img src="https://cdn-images-1.medium.com/max/1600/1*vSadxKWVoAirhVCa8fxiNw.png" alt="">
+				</section>
+				<section data-background="https://media.giphy.com/media/o2w8iRwy8SrqU/giphy.gif"></section>
+				<section>
+					<h2>NgRx Effects - our setup</h2>
+					<ul>
+						<li class="fragment">dispatch an action (`LOAD_FLOW`)</li>
+						<li class="fragment">an Effect listens to that action</li>
+						<li class="fragment">this effect calls a service (`this.shopService.getFlowByPageId`)</li>
+						<li class="fragment">with RxJS magic (operators) the effect listens to success/failure</li>
+						<li class="fragment">and shoots another action with data / error message (`(response: Flow) => new shopActions.LoadFlowSuccessAction(response)`)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>NgRx Effects - our setup #2</h2>
+					<ul>
+						<li class="fragment">components are listening to store changes</li>
+						<li class="fragment">via "selectors" (derived data)</li>
+<pre class="fragment"><code>export class ShopService {
+  flow$ = this.store.pipe(select(getFlow));
+  // ...
+}</code></pre>
+					</ul>
+				</section>
+				<section>
+					<h2>NgRx Effects - our setup #3</h2>
+					<p class="fragment">in the template you can unwrap it by the "async" pipe</p>
+<pre class="fragment"><code><suite-shop-card-content [flow]="flow$ | async">
+</suite-shop-card-content></code></pre>
+
 				</section>
 				<section>
 					<h2>why is redux good for us?</h2>
 					<ul>
-						<li>UI architecture</li>
-						<li>does not need to know about it's surrounding</li>
+						<li class="fragment">UI architecture</li>
+						<li class="fragment">does not need to know about it's surrounding</li>
+						<li class="fragment">!!TODO!!: don't forget to add something here about smart and dumb components</li>
 					</ul>
-				</section>
-				<section>
-					<h4>stuff about presentational and smart components</h4>
 				</section>
 
 
@@ -96,6 +172,9 @@
 					<h2>Possible follow ups</h2>
 					<h3>NgRx Entities</h3>
 				</section>
+
+				<section data-background="https://media.giphy.com/media/63iaRzJmiUoy4/giphy.gif"></section>
+				<section data-background="https://media.giphy.com/media/KJ1f5iTl4Oo7u/source.gif"></section>
 
 
 
@@ -115,7 +194,10 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
+				],
+				slideNumber: true,
+				transition: 'convex',
+				transitionSpeed: 'slow'
 			});
 		</script>
 	</body>
@@ -123,5 +205,5 @@
 
 
 <!--
-https://medium.com/beautiful-angular/angular-2-with-redux-using-ngrx-store-2f93a8ad0dd
+https://medium.com/beautiful-angular/angular-2-with-redux-using-NgRx-store-2f93a8ad0dd
 -->
